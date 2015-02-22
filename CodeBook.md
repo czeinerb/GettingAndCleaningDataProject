@@ -22,7 +22,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 **Important notes**
 
-- As it was not clearly stated in teh projact description I decided to use mean() and std() variables as well as the meanFeq() variables. Consequently I have 33+33+13=79 variables in total.
+- As it was not clearly stated in the project description I decided to use mean() and std() variables as well as the meanFeq() variables. Consequently I have 33+33+13=79 variables in total.
 - Not all files are used from the source data. List and details of the all original files can be found in the README.txt of the source data (_".\UCI HAR Dataset" folder._).
 
 
