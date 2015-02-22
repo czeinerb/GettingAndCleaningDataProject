@@ -1,7 +1,7 @@
 ---
 title: "Getting and Cleaning Data - Course Project"
 author: "Bela Czeiner"
-date: "Saturday, February 21, 2015"
+date: "Sunday, February 22, 2015"
 output: html_document
 ---
 
@@ -224,7 +224,7 @@ and also, writing the main tidy dataset to the working directory as "alldata.txt
 ```
     nn0; nn1; nn2; newLabels;
     View(tidy1);
-    write.table(tidy1,"alldata.txt",sep=",",row.names=FALSE,quote=FALSE)
+    write.table(tidy1,"alldata.txt",sep=",",row.names=FALSE)
 ```
 
 
