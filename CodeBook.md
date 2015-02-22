@@ -1,7 +1,7 @@
 ---
 title: "CodeBook for Getting and Cleaning Data - Course Project"
 author: "Bela Czeiner"
-date: "Saturday, February 21, 2015"
+date: "Sunday, February 22, 2015"
 output: html_document
 ---
 
