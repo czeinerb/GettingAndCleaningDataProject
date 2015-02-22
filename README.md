@@ -28,6 +28,7 @@ Init 1. Load required libraries
 ```
 
 Init 2. Downlaod the zip file and extract the contents to the working directory - if necessary
+
 **_This script starts with the assumption that the Samsung data is available in the working directory in an unzipped "UCI HAR Dataset" folder_**
 
 If the data is NOT available then it can be dowloaded with the following script:
