@@ -27,33 +27,32 @@ Init 1. Load required libraries
     library(plyr)
 ```
 
-Init 2. Downlaod the zip file and extract the contents to the working directory
+Init 2. Downlaod the zip file and extract the contents to the working directory - if necessary
+**_This script starts with the assumption that the Samsung data is available in the working directory in an unzipped "UCI HAR Dataset" folder_**
+
+If the data is NOT available then it can be dowloaded with the following script:
 
 ```
-    zipUrl = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-    download.file(zipUrl,dest="dataset.zip", mode = "wb") 
-    unzip ("dataset.zip",exdir = ".")
+    MS Windows:
+        zipUrl = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+        download.file(zipUrl,dest="dataset.zip", mode = "wb") 
+        unzip ("dataset.zip",exdir = ".")
+
+    Mac:
+        zipUrl = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+        download.file(zipUrl,dest="dataset.zip", method='curl') 
+        unzip ("dataset.zip",exdir = ".")
 ```
 
-Notes:
+**Notes:**
 
-- Downloading the data (size 59.7 Mb) may take a while depending on the speed of connection.
-- The parameter used in the script for dwownload will work on MS Windows operating systems, for Mac use:
-
-```
-    download.file(zipUrl,dest="dataset.zip", method='curl') 
-```
+- If source data will be downloaded to your working directory and extracted to the ".\UCI HAR Dataset" folder. Allow at least 330 MB for the compressed and extracted data.
+- Downloading the data (size 59.7 MB) may take a while depending on the speed of connection. 
+- The second tidy (tidy2) dataset with the averages will be exported to your working directory as "averages.txt". Optionally you can chose to export the first tidy dataset (tidy1) as "alldata.txt" to the same folder.
 
     
 ## Task 1: Merge the training and the test sets to create one data set.
 **First read data TRAINING and TEST files into separate dataframes**
-
-- 'train/X_train.txt': Training set.
-- 'train/y_train.txt': Training labels.
-- 'train/subject_train.txt' : Training subjects.
-- 'test/X_test.txt': Test set.
-- 'test/y_test.txt': Test labels.
-- 'test/subject_test.txt' : Test subjects. 
 
 ```
     trainSubj = read.csv("./UCI HAR Dataset/train/subject_train.txt", sep="", head=FALSE)
@@ -93,7 +92,7 @@ As a result, _trainDetails_ and _testDetails_ dataframes should have 561 variabl
     
 **And combine the three set of data into one data frame:**
 
-Note that rbind/cbind works well here as all are dataframes, using 'deparse.level = 0' (default) constructs no labels.
+Note that rbind/cbind works well here as all are dataframes, using 'deparse.level = 0' (default) is ok as there are no labels.
 
 ```
     theLot = cbind(Subj, Activ, Details)
@@ -191,11 +190,14 @@ To check it, see a few lines extracted from the resulting data use:
 
 # Task 4) Appropriately label the data set with descriptive variable names.
 
-Note that the variable names used earlier were only to help with selecting the required measurements.
-This step is to replace it with more friendly, descriptive variable names as well as to correct errors (as it differs form the source data description).
-First step is to read the names to a vecor, then perform the clean up, and eventually write it back to the dataframe.
+_Note that the variable names used earlier were only to help with selecting the required measurements._
+_This step is to replace it with more friendly, descriptive variable names, as well as to made the variable names legal in R._
+_Additionally it corrects the discrepancies between the data description of the source files and the actual variable names._
 
-_Note that as 't' and 'f' prefixes are denoting time and frequency, and they are replaced with 'Time' and 'Freq' in the variable names as an example to make it more descriptive._
+
+First step of this task is to read the names to a vecor, then perform the clean up, and eventually write it back to the dataframe.
+
+Note that as 't' and 'f' prefixes are denoting time and frequency, and they are replaced with 'Time' and 'Freq' in the variable names as an example to make it more descriptive.
 
 ```
     nn0 = names(results2)
@@ -214,7 +216,7 @@ Update labels of the main dataframe and load the completed tidy data set to 'tid
     colnames(results2) = newLabels
     tidy1 = results2
 ```
-_Note that it is not essential to use another dataframe (**tidy1**) but it is added here to make it easier to identify the outputs of the script._
+_Note that it is NOT essential to use another dataframe (**tidy1**) but it is added here to make it easier to identify the outputs of the script._
 
 
 Labels and the extracted tidy dataset can be checked with the scripts below, 
@@ -224,7 +226,8 @@ and also, writing the main tidy dataset to the working directory as "alldata.txt
     View(tidy1);
     write.table(tidy1,"alldata.txt",sep=",",row.names=FALSE,quote=FALSE)
 ```
-    
+
+
 # Task 5: From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 Create the second dataset with the averages per measurement
