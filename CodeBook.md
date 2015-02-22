@@ -61,7 +61,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 Features variable names are descriptive variable names based on the logic of the source data respective variables with the following differeces:
  - Hyphens (-) and Parentheses () are replaced with Period signs (.) to made the variable names legal in R.
- - Discrepancies between the data description of the source files and the actual variable names are corrected ("BodyBody" changed to "Body").
+ - Discrepancies between the data description of the source files and the actual variable names are corrected ("Body" changed to "Body").
  - 't' and 'f' prefixes (denoting time and frequency) replaced with 'Time' and 'Freq'.
 
 
@@ -156,15 +156,15 @@ Features variable names are descriptive variable names based on the logic of the
             70	FreqBodyAccMag.mean
             71	FreqBodyAccMag.std
             72	FreqBodyAccMag.meanFreq
-            73	FreqBodyBodyAccJerkMag.mean
-            74	FreqBodyBodyAccJerkMag.std
-            75	FreqBodyBodyAccJerkMag.meanFreq
-            76	FreqBodyBodyGyroMag.mean
-            77	FreqBodyBodyGyroMag.std
-            78	FreqBodyBodyGyroMag.meanFreq
-            79	FreqBodyBodyGyroJerkMag.mean
-            80	FreqBodyBodyGyroJerkMag.std
-            81	FreqBodyBodyGyroJerkMag.meanFreq
+            73	FreqBodyAccJerkMag.mean
+            74	FreqBodyAccJerkMag.std
+            75	FreqBodyAccJerkMag.meanFreq
+            76	FreqBodyGyroMag.mean
+            77	FreqBodyGyroMag.std
+            78	FreqBodyGyroMag.meanFreq
+            79	FreqBodyGyroJerkMag.mean
+            80	FreqBodyGyroJerkMag.std
+            81	FreqBodyGyroJerkMag.meanFreq
 ```
 
 
@@ -277,5 +277,3 @@ Features variable names are descriptive variable names based on the logic of the
 
 
 # End-of-File  
-
-
