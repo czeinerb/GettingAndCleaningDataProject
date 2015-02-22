@@ -8,9 +8,10 @@
     library(plyr)
 
 ## Init 2: Download the zip file and extract the contents to the working directory
-    zipUrl = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-    download.file(zipUrl,dest="dataset.zip", mode = "wb") 
-    unzip ("dataset.zip",exdir = ".")
+##         If necessary..
+    ### zipUrl = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    ### download.file(zipUrl,dest="dataset.zip", mode = "wb") 
+    ### unzip ("dataset.zip",exdir = ".")
     
 # Task 1: Merge the training and the test sets to create one data set:
     ## Read data TRAINING and TEST files
