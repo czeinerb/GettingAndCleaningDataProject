@@ -50,7 +50,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 ####Data description of the two output data set of the project
 
-**'tidy1' dataset contains 2 identifier and 79 features**
+**'tidy1' dataset contains 2 identifiers and 79 features**
 
 - The two identifers are the id-s of the Subjects who performed the activity, 
 - and names of the performed activities (ActivityNames).
@@ -168,7 +168,7 @@ Features variable names are descriptive variable names based on the logic of the
 ```
 
 
-**'tidy2' dataset contains 2 identifier and 79 features**
+**'tidy2' dataset contains 2 identifiers and 79 features**
 
 - Details are identican as described for 'tidy1' dataset with the exception that feature variables are averaged values for each activity and each subject.
 - To reflect this aggregation the 79 fearure variable names are prefixed with 'Avg.'.
