@@ -8,7 +8,7 @@
     library(plyr)
 
 ## Init 2: Download the zip file and extract the contents to the working directory
-##         If necessary..
+##         If necessary use:
     ### zipUrl = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
     ### download.file(zipUrl,dest="dataset.zip", mode = "wb") 
     ### unzip ("dataset.zip",exdir = ".")
